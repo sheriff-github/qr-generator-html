@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <style>
+            body{
+                background-color: rgb(105, 127, 120);
+            }
+            .container{
+                width: 400px;
+                padding: 25px 35px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                color: rgb(0, 0, 0);
+                transform: translate(-50% ,-50%);
+                background-color: rgb(255, 255, 255);
+                border-radius: 25px;
+            }
+            .container input{
+                    padding:10px 10px;
+                    font-weight: 900;
+                    font-family: Arial, Helvetica, sans-serif;
+                    border-radius: 10px;
+
+            }
+            .container button{
+                weight: 100px; ;
+                height: 50px;
+                border: 0;
+                margin: 50px 100px;
+                cursor: pointer;
+                outline: 20;
+                background: rgb(14, 98, 154);
+                padding: 20px 100px;
+                border-radius: 25px;
+                color:white ;
+            }
+            .container p{
+                font-weight: 800;
+                font-family: bold;
+                font-size: 20px;
+            }
+            #imageBox img{
+                padding: 30%;
+                
+            }
+
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <p>Enter text or URL</p>
+        <input type="text" name="" value=""placeholder="text or url" id="qrtext">
+        <div id="imageBox">
+            <img id="qrImage">
+        </div>
+        
+        <button onclick="gen()">CREATE</button>
+
+    </div>
+    
+            <script>
+                let imageBox=document.getElementById("imageBox");
+                let qrImage=document.getElementById("qrImage");
+                let qrtext=document.getElementById("qrtext");
+
+                function gen(){
+                    qrImage.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+qrtext.value;
+                }
+
+
+
+            </script>
+
+
+    </body>
+</html>
